@@ -23,15 +23,15 @@ In case of height of children,
 
 Based on evidences jury decides to reject or failure to reject null hypothesis, which means either defendant is guilty or there is not enough evidence that he is guilty. In such decision there are two ways to commit mistakes and these are,
 
-| | Defendant is innocent | Defendant is guilty
-Freed | Correct Decision | Wrong Judgement
-Convicted | Wrong Judgement | Correct Decision
+| | Defendant is innocent | Defendant is guilty |
+| Freed | Correct Decision | Wrong Judgement |
+| Convicted | Wrong Judgement | Correct Decision |
 
 In statistics these are called type I and type II errors
 
-| | H0 is true | H1 is true
-Do not reject H0| Correct Decison | Type II Error
-Reject H0| Type I Error | Correct Decision
+| | H0 is true | H1 is true |
+| Do not reject H0| Correct Decison | Type II Error |
+| Reject H0| Type I Error | Correct Decision |
 
 Acceptance of H1 when H0 is true is called type I error. Probability of committing type I error is called level of significance. Maximum probability type I error permitted is called critical value. In case of jury example would be convicting the defendant when he is innocent.
 Below are step by step procedure to perform hypothesis testing,
