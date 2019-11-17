@@ -2,9 +2,8 @@ title: Koham - In Search of Truth!
 author: Ranjan Mishra
 email: rjmishra111@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Blog on Machine Learning, Data Science, Stochastic Process, 
+  Algorithms, Anthropology and Adviat Vedanta.
 show_excerpts: true # set to true to show excerpts on the homepage
 
 # Minima date format
@@ -16,6 +15,7 @@ plainwhite:
   tagline: Data Scientist
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
+  disqus_shortname: https-satya-anweshi-github-io
 
   # generate social links in footer
   social_links:
