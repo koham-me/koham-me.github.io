@@ -3,6 +3,7 @@ layout: post
 title: "Karger's Algorithm"
 date: 2018-08-25
 tags: [graph, algorithm, clustering]
+categories: Graphs, Algorithm, Clustering
 comments: true
 
 ---
