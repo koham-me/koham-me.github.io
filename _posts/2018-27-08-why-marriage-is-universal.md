@@ -3,6 +3,7 @@ layout: post
 title: "Why is marriage Universal?"
 date: 2018-08-27
 tags: [anthropology, marriage]
+categories: Anthropology
 comments: true
 
 ---
