@@ -3,6 +3,7 @@ layout: post
 title: "Hypothesis Testing"
 date: 2018-09-28
 tags: [statistics, machinelearning]
+categories: Statistics
 comments: true
 
 ---
