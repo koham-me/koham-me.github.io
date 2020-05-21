@@ -9,17 +9,16 @@ comments: true
 
 
 ## Function
-Function is mathematical object which represents relationship between two sets. We can also say it is rule which associates element of two sets. We say $f : X \to Y $, and call $X$ domain of function and $Y$ co-domain of function.  
+Function is mathematical object which represents relationship between two sets. We can also say it is rule which associates element of two sets. We say $$f : X \to Y $$, and call $$X$$ domain of function and $$Y$$ co-domain of function.  
 ![Sets]({{site.baseurl}}/img/function-sets.svg)
 
 
-For example 
-
-$$ f: R \to R , f(x) = x^2 $$
-
+For example,  
+$$ f: R \to R , f(x) = x^2 $$  
 In this case $$X$$ and $$Y$$ both are set or Real Numbers $$R$$. Which can be plotted on x-y axis as below,
 ![Graph of $$f(x)=x^2$$]({{site.baseurl}}/img/xsqaure.png)
-Example of some well knows functions
+
+Example of some well knows functions,
 
 $$ E = mc^2 $$ , Famous energy mass equivalence relation by Einstien.
 
@@ -27,7 +26,7 @@ $$ F = ma $$, Netwons second law of motion.
 
 $$ F = G\frac{m_1 m_2}{r^2} $$ Newtons law for gravitational force.
 
-These functions are important, they help in making decisions, e.g. I can determine amount of force needed to accelerate a car with $10ms^{-2}$ based on its mass, which can help me with the amount of petrol needed for that, or how much of the uranium is sufficient to generate electricty for a city.
+These functions are important, they help in making decisions, e.g. I can determine amount of force needed to accelerate a car with $$10ms^{-2}$$ based on its mass, which can help me with the amount of petrol needed for that, or how much of the uranium is sufficient to generate electricty for a city.
 
 ### Function Approximation 
 If we have rule or function structure, we can compute y(dependent variable) for any value of x(independent variable). But in some cases we do not know the exact nature of function, all we can do is observe values of x and y for some finite number of cases, for example,
@@ -46,16 +45,16 @@ From these finite number of observations, we want to find true nature of functio
 
 ### Modelling
 
-As we have seen in previous section, function approximation is method to search for the a function close to true function in space of all functions. The space of all functions will be large and it will have infinitely many functions, how do we restrict ourselves to some subset of all functions, such that the search space is smaller and our search procedure becomes feasible. We can do this with some assumption about the true nature of the function and then based on observation we can decide the best approximation of true function, this is called as modelling or model building, since we do not know the true.
+As we have seen in previous section, function approximation is method to search for the a function close to true function in space of all functions. The space of all functions will be large and it will have infinitely many functions, how do we restrict ourselves to some subset of all functions, such that the search space is smaller and our search procedure becomes feasible. We can do this with some assumption about the true nature of the function and then based on observation we can decide the best approximation of true function, this is called as modelling or model building, since we do not know the true. If we assume below rectangle as set of all possible functions, then single point is one particular function.
 ![Space of all Functions]({{site.baseurl}}/img/function_space.png)
 
 We may consider function with some parameters lets say $$\theta$$ then we can take, $$f\hat(x;\theta)$$ as approximation of $$f(x)$$ and then try to find $$\theta$$, based on the observations, for example
 
-$$ f\hat(x;\theta) = x + x^2 + x^3 + ... + x^\theta $$ 
+$$ f\hat(x;\theta) = x + x^2 + x^3 + ... + x^\theta $$  
 
-$$ f\hat(x;\theta_0, \theta_1) = \theta_0 + \theta_1 x $$
+$$ f\hat(x;\theta_0, \theta_1) = \theta_0 + \theta_1 x $$  
 
-$$ f\hat(x;\theta) = e^{-\theta^Tx} $$ where  $$x,\theta \in R^n $$ 
+$$ f\hat(x;\theta) = e^{-\theta^Tx} $$ where  $$x,\theta \in R^n $$  
 
 Consider following set of observations generated from true function $$f(x) = 3.6 + 1.2 x^{1.001} $$,
 
@@ -74,34 +73,34 @@ If we draw a scatter diagram of above set of observations we get following, and 
 
 | | |
 |--:|:--|
-| $ f\hat(x; a, b) = a + bx $ | ![Scatter Diagram]({{site.baseurl}}/img/scatter_1001.png)|
+| $$ f\hat(x; a, b) = a + bx $$ | ![Scatter Diagram]({{site.baseurl}}/img/scatter_1001.png)|
 
 ## Supervised Learning
-Till now we have assumed that the relationship is deterministic, i.e. for a given value of x, y will be same all the time, but this might not be true in every case. There might be some randomness, and for same value of x, we might observe different value for y. This randomness may be due to error in the process of measurement , or it might be inherent in the process generating these observations. In the presence of randomness, our modelling process changes to accomodate the randomness in the modelling,
-we assume that the true nature of the relationship between x and y as below
+Till now we have assumed that the relationship is deterministic, i.e. for a given value of x, y will be same all the time, but this might not be true in every case. There might be some randomness, and for same value of x, we might observe different value for y. This randomness may be due to error in the process of measurement , or it might be inherent in the process generating these observations. In the presence of randomness, our modelling process changes to accomodate the randomness in the modelling, we assume that the true nature of the relationship between x and y as below
 
-$$ Y = f(x) + \epsilon $$
-and we assume that
+$$ Y = f(x) + \epsilon $$  
+and where $\epsilon$ is uncorrelated random variable(error) statistically independent of $$x$$.
+
 $$ E[\epsilon] = 0  \\ Corr(\epsilon_i, \epsilon_j)=0$$
-where $\epsilon$ is uncorrelated random variable(error) statistically independent of x. We would like to estimate or approximate a function $f$ with some parametric function $f\hat(x;\theta)$, so that we can predict 
+
+We would like to estimate or approximate a function $f$ with some parametric function $f\hat(x;\theta)$, so that we can predict 
+
 $$\hat Y = f\hat(x;\theta)$$ 
 for any value of x.
 
-This function approximation(parameter estimation) is called **supervised learning** for given pair of finite observations $$O = (x_1, y_1),(x_2, y_2), .... (x_n, y_n)$$.
-
-When y is limited to take only finite set of values it is called **classification** and when value of y is continuous it is called as **regression**. 
-
-We call set of observtions available to us as training data, hence supervised learning is method to approximate or estimate the function in presence of randomness with the available training data.
+This function approximation(parameter estimation) is called **supervised learning** for given pair of finite observations $$O = (x_1, y_1),(x_2, y_2), .... (x_n, y_n)$$. When y is limited to take only finite set of values it is called **classification** and when value of y is continuous it is called as **regression**.  We call set of all observtions available to us as training set, hence supervised learning is method to approximate or estimate the function in presence of randomness with the available training data.
 
 
 ### Measuring Quality of Estimated Function
 
 In order to to evalute the performance of estimated function, we need to measure, how well the estimated values match with observed values. Thus we want to quantify the extent of closeness between estimated and observed values. One of the measure is *mean square error* 
+
 $$ MSE = \frac{1}{n} \sum_{i=0}^n (y_i - \hat f(x_i))^2 $$
 
 MSE computed from the training data is *training MSE*, but our purpose is to compute error in estimation with respect to unkown values for x such that we can generalize the estimated function for all values of x. One of simplest way to do is to devide set of available data into training and test data, use test data for computing test MSE, which are unseen in training process. There are more robust method to this, which are not discussed here.
 
 In classification setting we can compute error rate with
+
 $$ Error = \frac{1}{n} \sum_{i=0}^n (y_i \ne \hat f(x_i)) $$
 
 
@@ -109,11 +108,14 @@ $$ Error = \frac{1}{n} \sum_{i=0}^n (y_i \ne \hat f(x_i)) $$
 ![Simple Linear Regression]({{site.baseurl}}/img/slm.png)
 
 We assume that the nature of true function is linear
+
 $$ f = \beta_0 + \beta_1 x $$
+
 and we would like to estimate this function based on the training observations with function, which boils down to estimating values of parameters $$\beta_0, \beta_1$$, lets say our estimate for these are $$\hat \beta_0, \hat \beta_1$$, then we can write our approximated or estimated function as 
+
 $$ \hat f = \hat \beta_0 + \hat \beta_1 x $$
 
-Interpretation of $\beta_0$ and $\beta_1 $
+Interpretation of $$\beta_0$$ and $$\beta_1 $$
 ![Interpretation of Parameters]({{site.baseurl}}/img/inter.png)
 
 ### Parameter Estimation
@@ -122,12 +124,13 @@ $\beta_0$ and $\beta_1$ are parameters to be estimated from the available traini
 $$ RSS = \sum_{i=0}^n (y_i - \hat f(x_i))^2 \\
        = e_1^2 + e_2^2 + .. + e_n^2 $$
        
-where $e_1, e_2, .., e_n $ are called residuals.
+where $$e_1, e_2, .., e_n $$ are called residuals.
        
 
 We want to minimize RSS with respect to the parameters we want to estimate and hence we can obain parameters by setting the first derivative of the training MSE as 0, and compute the parameters
 
 $$\frac{d}{d\hat \beta_0} RSS = -2 \sum_{i=0}^{n}(y_i - \hat \beta_0 - \hat \beta_1 x_i)  = 0$$
+
 $$\frac{d}{d\hat \beta_1} RSS = -2 \sum_{i=0}^{n}(y_i - \hat \beta_0 - \hat \beta_1 x_i)x_i = 0$$
 
 By solving these equations we obtaing optimal values as below
@@ -159,7 +162,7 @@ where is $$ TSS = \sum_{i=0}^n (y_i - \bar y)^2 $$ total sum of squares.
 
 TSS measures the total variance in the response Y, and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS − RSS measures the amount of variability in the response that is explained (or removed) by performing the regression, and $$R^2$$ measures the proportion of variability in Y that can be explained using X.
 
-This implies that $$R^2%$$ of the variability of the dependent variable has been accounted for, and the remaining $(1-R^2)%$ of the variability is still unaccounted for. Hence more the value of $R^2$ better is fit of the model.
+This implies that $$R^2%$$ of the variability of the dependent variable has been accounted for, and the remaining $$(1-R^2)%$$ of the variability is still unaccounted for. Hence more the value of $$R^2$$ better is fit of the model.
 
 
 Recall that we have made following assumptions
@@ -183,23 +186,28 @@ One way of solving this probelm is to consider all variables separaltely in simp
 Better approach is to consoder linear model with all p variable, in below form
 
 $$ f(x_1, x_2, .. x_p) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p x_p $$
+
 and we would like to approximate $y$ with
 
 $$ \hat y = \hat f(x_1, x_2, .. x_p) = \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2 x_2 + ... + \hat\beta_p x_p $$
 
 If we assume $$x_0 =1$$ for all observations we can rewrite above as
-$$ \hat y = \sum_{i=0}^p \beta_i x_i = \beta^T x \\
+
+$$ \hat y = \sum_{i=0}^p \hat \beta_i x_i = \beta^T x \\
     \hat Y = \hat\beta X $$
-where $$\hat Y$$ is vector of all dependent variable and $$X$$ is $$nxp$$ matrix consisting all independent variables. 
+
+where $$\hat Y$$ is vector of all dependent variable and $$X$$ is $$n \times p$$ matrix consisting all independent variables. 
 
 ### Parameter Estimation
 
 $$ RSS = \sum_{i=0}^n (y_i - \hat\beta_0 - \hat\beta_1 x_1 - \hat\beta_2 x_2 - .. - \hat\beta_p x_p) ^ 2 $$  
+
 We can write this in matrix form as below
 
 $$ RSS(\hat\beta) = (Y - \hat\beta X)^T( Y - \hat\beta X) $$
 
 For optimal values of $\beta$, the derivative of above will be 0. which means
+
 $$ \frac{d}{d\hat\beta} RSS = 0 \\
    -2X^T(Y - X\hat\beta) = 0 \\
    \hat\beta = (X^T X)^{-1} X^T Y $$
@@ -214,6 +222,7 @@ $$ RSE = \sqrt \frac{\sum_{i=0}^n (\hat y_i - y_i)^2}{n-p-1} \\
 
 3. Adjusted $$R^2=$$
 In general, $$R^2$$ never decreases when a regressor is added to the model, regardless of the value of the contribution of that variable. The adjusted $$R^2$$ penalizes us for adding terms that are not helpful.
+
 $$ \hat R^2 = 1 - \frac{\frac{RSS}{n-p}}{TSS} $$
 
 4. Graphical assesment for the assumptions similar to simple linear regression.
@@ -226,14 +235,16 @@ For two class(when y can take only two values), we can put 0 for one and 1 for o
 $$y_i = 1 , when \hat f(x_i) \ge 0.5 $$
 
 $$y_i = 0, otherwise $$  
-which means we can think of $\hat f(x) $ as the probability of x being from class 1.
+
+which means we can think of $$\hat f(x) $$ as the probability of x being from class 1.
 
 This might be a good idea, but some of the time linear regression can produce values outside range of $$[0,1]$$, which will be harder to interpret in terms of probability. Second thing we can not extend it for more than two classes. 
 
 ### Logistic Model
-To avoid probelm of linear regression values outside range of $[0,1]$, we can use logistic function, which is of the form
+To avoid probelm of linear regression values outside range of $$[0,1]$$, we can use logistic function, which is of the form
 
 $$ f(a) = \frac{e^a}{1+e^a} $$  
+
 this function always takes values in interval $$[0,1]$$ and hence we can use it with linear regression, assuming it as probability for one of the classes
 
 $$p(x) = \frac{e^{\beta X}}{1 + e^{\beta X}} $$
@@ -250,18 +261,21 @@ We can utilise principle of maximum likelihood to estimate the parameters of log
 
 $$ l(\hat \beta) = \Pi_{i:y_i=1}p(x_i) \Pi_{j:y_j=0}(1-p(x_j)) $$
 
-$\hat \beta$ parameters are chosen, such that likelihood is maximized. This can be achieved with gradient descent like optimzation, and optimal values of parameters can then be utilized for prediction.
+$$\hat \beta$$ parameters are chosen, such that likelihood is maximized. This can be achieved with gradient descent like optimzation, and optimal values of parameters can then be utilized for prediction.
 
 ### Model Assesment
 
 #### Error Rate 
+
 $$ Error Rate= \frac{1}{n} \sum_{i=0}^n I(y_i \ne \hat f(x_i)) $$
+
 where I is indicator function.
 
 #### Accuracy
 This represents number of observations classified correctly by our model. 
 
 $$ Accuracy = \frac{1}{n} \sum_{i=0}^n I(y_i == \hat f(x_i)) $$
+
 Accuracy is nothing but 1 - Error Rate.
 
 #### Confusion Matrix
