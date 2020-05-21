@@ -14,8 +14,8 @@ Function is mathematical object which represents relationship between two sets. 
 
 
 For example,  
-$$ f: R \to R , f(x) = x^2 $$  
-In this case $$X$$ and $$Y$$ both are set or Real Numbers $$R$$. Which can be plotted on x-y axis as below,
+$$ f: \mathbb{R} \right \mathbb{R} , f(x) = x^2 $$  
+In this case $$X$$ and $$Y$$ both are set or Real Numbers $$R$$. Which can be plotted on $$x-y$$ axis as below,
 ![Graph of $$f(x)=x^2$$]({{site.baseurl}}/img/xsqaure.png)
 
 Example of some well knows functions,
@@ -29,7 +29,7 @@ $$ F = G\frac{m_1 m_2}{r^2} $$ Newtons law for gravitational force.
 These functions are important, they help in making decisions, e.g. I can determine amount of force needed to accelerate a car with $$10ms^{-2}$$ based on its mass, which can help me with the amount of petrol needed for that, or how much of the uranium is sufficient to generate electricty for a city.
 
 ### Function Approximation 
-If we have rule or function structure, we can compute y(dependent variable) for any value of x(independent variable). But in some cases we do not know the exact nature of function, all we can do is observe values of x and y for some finite number of cases, for example,
+If we have rule or function structure, we can compute $$y$$ (dependent variable) for any value of $$x$$ (independent variable). But in some cases we do not know the exact nature of function, all we can do is observe values of $$x$$ and $$y$$ for some finite number of cases, for example,
 
 | $$x$$      |  $$y$$   |
 |-------:|----------:|
@@ -40,15 +40,15 @@ If we have rule or function structure, we can compute y(dependent variable) for 
 | 4      |  16        |
 | 5      |  25        |
 
-From these finite number of observations, we want to find true nature of function, so that we can use it to compute or predict y(dependent variable) for any given value of x(independent variable). Since we have only limited number of observation, we may not be able to get the true nature of the function, but we can still try to get an approximation of it. This method is called **function approximation**. In other word function approximation is to search for the approximate function for the true function in the space of all functions, this has to be supplied with error measure to find how much it deviates from the true nature of function based on the observations from the true function, we want to have as close as possible with respect to the error measure.
+From these finite number of observations, we want to find true nature of function, so that we can use it to compute or predict $$y$$ (dependent variable) for any given value of $$x$$ (independent variable). Since we have only limited number of observation, we may not be able to get the true nature of the function, but we can still try to get an approximation of it. This method is called **function approximation**. In other word function approximation is to search for the approximate function for the true function in the space of all functions, this has to be supplied with error measure to find how much it deviates from the true nature of function based on the observations from the true function.
 
 
 ### Modelling
 
-As we have seen in previous section, function approximation is method to search for the a function close to true function in space of all functions. The space of all functions will be large and it will have infinitely many functions, how do we restrict ourselves to some subset of all functions, such that the search space is smaller and our search procedure becomes feasible. We can do this with some assumption about the true nature of the function and then based on observation we can decide the best approximation of true function, this is called as modelling or model building, since we do not know the true. If we assume below rectangle as set of all possible functions, then single point is one particular function.
+As we have seen in previous section, function approximation is method to search for the a function close to true function in space of all functions. The space of all functions will be large and it will have infinitely many functions, how do we restrict ourselves to some subset of all functions, such that the search space is smaller and our search procedure becomes feasible. We can do this with some assumption about the true nature of the function and then based on observation we can decide the best approximation of true function, this is called as modelling or model building. If we assume below rectangle as set of all possible functions, then each individual point is a function.
 ![Space of all Functions]({{site.baseurl}}/img/function_space.png)
 
-We may consider function with some parameters lets say $$\theta$$ then we can take, $$f\hat(x;\theta)$$ as approximation of $$f(x)$$ and then try to find $$\theta$$, based on the observations, for example
+We may consider function with some parameters lets say $$\theta$$, we can think $$f\hat(x;\theta)$$ as approximation of $$f(x)$$ and then try to find $$\theta$$, based on the observations, for example
 
 $$ f\hat(x;\theta) = x + x^2 + x^3 + ... + x^\theta $$  
 
@@ -69,24 +69,24 @@ Consider following set of observations generated from true function $$f(x) = 3.6
 |3.6  | 7.92 |
 |3.9  | 8.2  |
 
-If we draw a scatter diagram of above set of observations we get following, and it is reasonable to assume linear relationship here an
+If we draw a scatter plot of above set of observations we get following, and it is reasonable to assume linear relationship here as
 
 | | |
 |--:|:--|
 | $$ f\hat(x; a, b) = a + bx $$ | ![Scatter Diagram]({{site.baseurl}}/img/scatter_1001.png)|
 
 ## Supervised Learning
-Till now we have assumed that the relationship is deterministic, i.e. for a given value of x, y will be same all the time, but this might not be true in every case. There might be some randomness, and for same value of x, we might observe different value for y. This randomness may be due to error in the process of measurement , or it might be inherent in the process generating these observations. In the presence of randomness, our modelling process changes to accomodate the randomness in the modelling, we assume that the true nature of the relationship between x and y as below
+Till now we have assumed that the relationship is deterministic, i.e. for a given value of $$x, y$$ will be same all the time, but this might not be true in every case. There might be some randomness, and for same value of $$x$$, we might observe different value for $$y$$. This randomness may be due to error in the process of measurement , or it might be inherent in the process generating these observations. In the presence of randomness, our modelling process changes to accomodate the randomness in the modelling, we assume that the true nature of the relationship between $$x$$ and $$y$$ as below,
 
 $$ Y = f(x) + \epsilon $$  
 and where $\epsilon$ is uncorrelated random variable(error) statistically independent of $$x$$.
 
 $$ E[\epsilon] = 0  \\ Corr(\epsilon_i, \epsilon_j)=0$$
 
-We would like to estimate or approximate a function $f$ with some parametric function $f\hat(x;\theta)$, so that we can predict 
+We would like to estimate or approximate a function $$f$$ with some parametric function $$f\hat(x;\theta)$$, so that we can predict 
 
 $$\hat Y = f\hat(x;\theta)$$ 
-for any value of x.
+for any value of $$x$$.
 
 This function approximation(parameter estimation) is called **supervised learning** for given pair of finite observations $$O = (x_1, y_1),(x_2, y_2), .... (x_n, y_n)$$. When y is limited to take only finite set of values it is called **classification** and when value of y is continuous it is called as **regression**.  We call set of all observtions available to us as training set, hence supervised learning is method to approximate or estimate the function in presence of randomness with the available training data.
 
@@ -97,7 +97,7 @@ In order to to evalute the performance of estimated function, we need to measure
 
 $$ MSE = \frac{1}{n} \sum_{i=0}^n (y_i - \hat f(x_i))^2 $$
 
-MSE computed from the training data is *training MSE*, but our purpose is to compute error in estimation with respect to unkown values for x such that we can generalize the estimated function for all values of x. One of simplest way to do is to devide set of available data into training and test data, use test data for computing test MSE, which are unseen in training process. There are more robust method to this, which are not discussed here.
+MSE computed from the training data is *training MSE*, but our purpose is to compute error in estimation with respect to unknown values for $$x$$ such that we can generalize the estimated function for all possible values of $$x$$. One way of doing this is to devide set of available data into training and test data, and use test data for computing test MSE, which are unseen in training process. There are more robust method to this, which are not discussed here.
 
 In classification setting we can compute error rate with
 
@@ -119,7 +119,7 @@ Interpretation of $$\beta_0$$ and $$\beta_1 $$
 ![Interpretation of Parameters]({{site.baseurl}}/img/inter.png)
 
 ### Parameter Estimation
-$\beta_0$ and $\beta_1$ are parameters to be estimated from the available training data, we can do this by minimizing training RSS, which measures deviation from the observed and estimated values as follows, 
+$$\beta_0$$ and $$\beta_1$$ are parameters to be estimated from the available training data, we can do this by minimizing training RSS, which measures deviation from the observed and estimated values as follows, 
 
 $$ RSS = \sum_{i=0}^n (y_i - \hat f(x_i))^2 \\
        = e_1^2 + e_2^2 + .. + e_n^2 $$
@@ -143,12 +143,12 @@ $$\hat \beta_1 =  \frac{\sum_{i=0}^n (x_i - \bar x) (y_i - \bar y)}{\sum_{i=0}^n
 ### Model Assesment
 
 #### Residual Standard Error
-Due to the presence of these error terms, even if we knew the true regression line (i.e. even if $$\beta_0$$ and $$\beta_1$$ were known), we would not be able to perfectly predict Y from X. The RSE is an estimate of the standard deviation of $$\epsilon$$ Roughly speaking, it is the average amount that the response will deviate from the true regression line.
+Due to the presence of these error terms, even if we knew the true regression line (i.e. even if $$\beta_0$$ and $$\beta_1$$ were known), we would not be able to perfectly predict $$Y$$ from $$X$$. The RSE is an estimate of the standard deviation of $$\epsilon$$ Roughly speaking, it is the average amount that the response will deviate from the true regression line.
 
 $$ RSE = \sqrt \frac{\sum_{i=0}^n (\hat y_i - y_i)^2}{n-2} \\
        = \sqrt \frac{RSS}{n-2}$$
        
-The RSE is considered a measure of the lack of fit of the model to the data. If the predictions obtained using the model are very close to the true outcome values then RSE will be small, and we can conclude that the model fits the data very well. On  the other hand, if $\hat y_i$  is very far from $y_i$ for one or more observations, then the RSE may be quite large, indicating that the model doesn’t fit the data well. 
+The RSE is considered a measure of the lack of fit of the model to the data. If the predictions obtained using the model are very close to the true outcome values then RSE will be small, and we can conclude that the model fits the data very well. On  the other hand, if $$\hat y_i$$  is very far from $$y_i$$ for one or more observations, then the RSE may be quite large, indicating that the model doesn’t fit the data well. 
 
 #### $$ R^2 $$ = Coefficient of Determination.
 
@@ -160,13 +160,13 @@ $$
 
 where is $$ TSS = \sum_{i=0}^n (y_i - \bar y)^2 $$ total sum of squares. 
 
-TSS measures the total variance in the response Y, and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS − RSS measures the amount of variability in the response that is explained (or removed) by performing the regression, and $$R^2$$ measures the proportion of variability in Y that can be explained using X.
+TSS measures the total variance in the response $$Y$$, and can be thought of as the amount of variability inherent in the response before the regression is performed. In contrast, RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS − RSS measures the amount of variability in the response that is explained (or removed) by performing the regression, and $$R^2$$ measures the proportion of variability in $$Y$$ that can be explained using $$X$$.
 
 This implies that $$R^2%$$ of the variability of the dependent variable has been accounted for, and the remaining $$(1-R^2)%$$ of the variability is still unaccounted for. Hence more the value of $$R^2$$ better is fit of the model.
 
 
 Recall that we have made following assumptions
-1. Random errors are independent of X.
+1. Random errors are independent of $$X$$.
 2. Random errors are uncorrelated.
 3. Random errors have common variance.
 
@@ -177,9 +177,9 @@ These assumptions will have to be true for the residuls our model produces. If w
 
 ## Multiple Linear Regression
 
-When we have more than one variable, which means our function is of the form $$f:R^p \to R$$, we have to consider all p variables when modelling.
+When we have more than one variable, which means our function is of the form $$f:\mathbb{R}^p \rightarrow \mathbb{R}$$, we have to consider all p variables when modelling.
 
-$$ y = f(x) + \epsilon, x \in R^p $$
+$$ y = f(x) + \epsilon, x \in \mathbb{R}^p $$
 
 One way of solving this probelm is to consider all variables separaltely in simple linear regression and asses the relationship, but we can not combine the results from different simple linear regression to get the result. Second thing when we consider modelling one variable at a time, we are leaving behind p-1 variables combined influence at it. 
 
@@ -196,7 +196,7 @@ If we assume $$x_0 =1$$ for all observations we can rewrite above as
 $$ \hat y = \sum_{i=0}^p \hat \beta_i x_i = \beta^T x \\
     \hat Y = \hat\beta X $$
 
-where $$\hat Y$$ is vector of all dependent variable and $$X$$ is $$n \times p$$ matrix consisting all independent variables. 
+where $$\hat Y$$ is vector of all dependent variable and $$X$$ is $$n \times p$$ matrix consisting $$n$$ samples of $$p$$ dimensional independent variables. 
 
 ### Parameter Estimation
 
@@ -230,15 +230,15 @@ $$ \hat R^2 = 1 - \frac{\frac{RSS}{n-p}}{TSS} $$
 
 ## Logistic Regression
 ### Linear regression approach
-For two class(when y can take only two values), we can put 0 for one and 1 for other class and use linear regression approach and can then put a additional rule as,
+For two class(when $$y$$ can take only two values), we can put 0 for one and 1 for other class and use linear regression approach and can then put a additional rule as,
+    
+$$ y = \begin{cases}
+           1               & \hat f(x_i) \ge 0.5 \\
+           0               & \text{otherwise} 
+           \end{cases}
+$$
 
-$$y_i = 1 , when \hat f(x_i) \ge 0.5 $$
-
-$$y_i = 0, otherwise $$  
-
-which means we can think of $$\hat f(x) $$ as the probability of x being from class 1.
-
-This might be a good idea, but some of the time linear regression can produce values outside range of $$[0,1]$$, which will be harder to interpret in terms of probability. Second thing we can not extend it for more than two classes. 
+which means we can think of $$\hat f(x) $$ as the probability of $$x$$ being from class 1. This might be a good idea, but some of the time linear regression can produce values outside range of $$[0,1]$$, which will be harder to interpret in terms of probability. Second thing we can not extend it for more than two classes. 
 
 ### Logistic Model
 To avoid probelm of linear regression values outside range of $$[0,1]$$, we can use logistic function, which is of the form
@@ -251,8 +251,8 @@ $$p(x) = \frac{e^{\beta X}}{1 + e^{\beta X}} $$
 
 In other way we can write 
 
-$$  \frac{p(x)}{1-p(x)} = e^{\beta X} \\
-    log\frac{p(x)}{1-p(x)} = \beta X $$
+$$  \frac{p(x)}{1-p(x)} = e^{\beta x} \\
+    log\frac{p(x)}{1-p(x)} = \beta x $$
 
 This quantity is log odd of being from class 1, which is also called logit. Which can be then approximated with linear regression aproach. 
 
@@ -301,12 +301,12 @@ In case of linear models, more number of variables we include in our model, more
 
 
 ### Best Subset Selection
-To perform best subset selection, we fit a separate least squares regression for each possible combination of the p predictors. That is, we fit all p models that contain exactly one predictor, and then all models that contain exactky two predictors, and so forth. We then look at all of the resulting models, with the goal of identifying the one that is best with respect to measures such as RSE, $$R^2$$ or error rate etc. The problem of selecting the best model from among the $2^p$ possibile models is called best subset selection.
+To perform best subset selection, we fit a separate least squares regression for each possible combination of the $$p$$ predictors. That is, we fit all $$p$$ models that contain exactly one predictor, and then all models that contain exactky two predictors, and so forth. We then look at all of the resulting models, with the goal of identifying the one that is best with respect to measures such as RSE, $$R^2$$ or error rate etc. The problem of selecting the best model from among the $$2^p$$ possibile models is called best subset selection.
 
-This is infeasible for even small value of p, e.g for p = 30, we have 1073741824 candidate models to select from.
+This is infeasible for even small value of $$p$$, e.g for $$p = 30$$, we have 1073741824 candidate models to select from.
 
 ## Shrinkage Methods
-As an alternative, we can fit a model containing all p predictors using a technique that constrains or regularizes the coefficient estimates, or equivalently, that shrinks the coefficient estimates towards zero. Two of such methods are ridge regression and lasso for linear regression. 
+As an alternative, we can fit a model containing all $$p$$ predictors using a technique that constrains or regularizes the coefficient estimates, or equivalently, that shrinks the coefficient estimates towards zero. Two of such methods are ridge regression and lasso for linear regression. 
 
 
 ### Ridge Regression
@@ -323,10 +323,10 @@ How is this helpful??
 
 The second term is called a shrinkage penalty, and it is small when $$\beta_1, , . . . ,\beta_p$$ are close to zero, and so it has the effect of shrinking the estimates of $$\beta_j$$ towards zero. The tuning parameter $$\lambda$$ serves to control parameter. When $$\lambda = 0$$, the penalty term has no effect, and ridge regression will produce the least squares estimates. However, as $$\lambda \to \infty$$, the impact of the shrinkage penalty grows, and the ridge regression coefficient estimates will approach zero.
 
-Ridge regression’s advantage over least squares is rooted in the bias-variance trade-off. As $\lambda$ increases, the flexibility of the ridge regression fit decreases, leading to decreased variance but increased bias.
+Ridge regression’s advantage over least squares is rooted in the bias-variance trade-off. As $$\lambda$$ increases, the flexibility of the ridge regression fit decreases, leading to decreased variance but increased bias.
 
 ### LASSO
-Ridge regression does have one obvious disadvantage. Unlike best subset, which will generally selects models that involve just a subset of the variables, ridge regression will include all p predictors in the final model. This may not be a problem for prediction accuracy, but it can create a challenge in model interpretation in settings in which the number of variables p is quite large. The lasso is a alternative to ridge regression that overcomes this disadvantage.
+Ridge regression does have one obvious disadvantage. Unlike best subset, which will generally selects models that involve just a subset of the variables, ridge regression will include all $$p$$ predictors in the final model. This may not be a problem for prediction accuracy, but it can create a challenge in model interpretation in settings in which the number of variables $$p$$ is quite large. The lasso is a alternative to ridge regression that overcomes this disadvantage.
 
 In LASSO we try to minimize 
 
